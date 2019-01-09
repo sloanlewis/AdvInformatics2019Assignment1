@@ -27,7 +27,12 @@
    * Checking that a file exists and is not empty
     
     ``` 
-    [ -s file.name ] || echo "file is empty" 
+   FILE=$1
+   if [[ -f $FILE && -s $FILE ]]; then 
+    echo "exist and not empty"
+else 
+    echo "not exist or empty"; 
+fi
     
     ```
     
