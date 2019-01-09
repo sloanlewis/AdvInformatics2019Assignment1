@@ -15,8 +15,22 @@
 4. What are the units of your answer for number 3?
 5. What are the bash commands for the following operations:
 
-    * Checking that a file exists
-    * Checking that a file exists and is not empty
+   * Checking that a file exists
+    ```
+   FILE=$1     
+   if [ -f $FILE ]; then
+      echo "File $FILE exists."
+   else
+      echo "File $FILE does not exist."
+   fi
+   ```  
+   * Checking that a file exists and is not empty
+    
+    ``` 
+    [ -s file.name ] || echo "file is empty" 
+    
+    ```
+    
 
 6. How would you use the commands from your answer to 5 to write a work flow for HPC that only runs a job if the
    expected output file is **not** present.
