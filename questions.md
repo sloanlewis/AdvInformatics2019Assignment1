@@ -4,6 +4,9 @@
 
 1. On the UCI cluster, the resource request "-pe openmp 64" refers to the number of processors requested.  Does that
    request mean that your commands will use multiple processors?
+   
+   ### Not necessarily. In order to use multiple processors you have to run a multi-core program that is able to execute using multiple processors.
+   
 2. In general, how do you know how many processors, how much RAM, how many files would be required/needed/written by the
    jobs you are running on the cluster?
 3. In order to be a "good citizen", you need to have some idea of much RAM your job requires.  In particular, you need
