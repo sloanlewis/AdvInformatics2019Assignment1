@@ -44,9 +44,9 @@
     ``` 
    FILE=$1
    if [[ -f $FILE && -s $FILE ]]; then 
-    echo "exist and not empty"
+      echo "exist and not empty"
    else 
-    echo "not exist or empty"; 
+      echo "not exist or empty"; 
    fi
     
     ```
@@ -55,7 +55,7 @@
 6. How would you use the commands from your answer to 5 to write a work flow for HPC that only runs a job if the
    expected output file is **not** present.
    
-   ***You could just replace the "echo" after the "else" with a command that will start your job running like qsub. This way it will only start the job if the output file is not present or is empty.
+   ***You could just replace the "echo" after the "else" with a command that will start your job running like qsub. This way it will only start the job if the output file is not present or is empty.***
    
    ```
    FILE=$1
