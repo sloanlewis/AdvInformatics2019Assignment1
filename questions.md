@@ -70,10 +70,22 @@
 
 7. Would your answer to number 3 work on Apple's OS X operating system?  If no, do you have any idea why not? 
 
-   ***No, -v is not an option for /usr/bin/time in OSX. 
+   ***No, -v is not an option for /usr/bin/time in OSX. The implementation for this command just differs between the two systems.***
 
 8. Most of the HPC nodes have 512Gb (gigabytes) of RAM. Let's say you have a job that will require **no more** than 24Gb
    of RAM.  How would you request resources so that you can run more than one job on a node **and** not cause nodes to
    crash?  Show an example of a skeleton HPC script as part of your answer.  **Knowing how to do this is super important
    and will save you loads of frustration and prevent you from taking out your colleagues' jobs on the cluster,
    preventing you from getting nasty emails from Harry!!!!!!!!!!!**
+   
+   ***You can limit the amount of resources you use so as to not crash any nodes using the {$ -l resource=} command. You can also use the array feature {$ -tc} which allows the job to be split into tasks and run more quickly in replicate.***
+   
+   ```
+   #!/bin/bash
+   #$ -N test
+   #$ -q bio
+   #$ -pe openmp 4
+   #$ -l mem_size=24G
+   #$ -t 1-1000
+   #$ -tc #of tasks
+```
